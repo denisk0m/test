@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import {defaultProduct, IProduct} from "../../data/data.ts";
 import {useAppSelector} from "../../store/hooks/redux.ts";
 import {ProductCard} from "../../components/ProductCard.tsx";
@@ -23,6 +23,7 @@ export const ProductView: React.FC = () => {
 
 
     return (<>
+            <NavLink to={"/products"}  style={{ textAlign: "left", display: "block" }} >{"<-- back"}</NavLink>
             <ProductCard isAbleToEdit={false} data={product}/>
         </>
     );
